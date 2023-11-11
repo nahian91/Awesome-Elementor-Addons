@@ -1,8 +1,8 @@
 <?php
 /**
- * Awesome Price
+ * Awesome Price Widget.
  *
- * Elementor widget that inserts a cta into the page
+ * Elementor widget that inserts a price into the page
  *
  * @since 1.0.0
  */
@@ -12,7 +12,7 @@ class Awesome_Price extends Widget_Base {
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve cta widget name.
+	 * Retrieve price widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -26,7 +26,7 @@ class Awesome_Price extends Widget_Base {
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve cta widget title.
+	 * Retrieve price widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -34,13 +34,13 @@ class Awesome_Price extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Price', 'webbricks' );
+		return esc_html__( 'Price', 'aee' );
 	}
 
 	/**
 	 * Get widget icon.
 	 *
-	 * Retrieve cta widget icon.
+	 * Retrieve price widget icon.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -73,11 +73,11 @@ class Awesome_Price extends Widget_Base {
 	 */
 	protected function _register_controls() {
 		
-		// Start of the CTA Content Tab Section
+		// Start of the price Content Tab Section
 	   $this->start_controls_section(
-	       'cta_content',
+	       'aee_price_content',
 		    [
-		        'label' => esc_html__('Content', 'webbricks'),
+		        'label' => esc_html__('Content', 'aee'),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT		   
 		    ]
 	    );
@@ -86,10 +86,10 @@ class Awesome_Price extends Widget_Base {
 		$this->add_control(
 			'aee_price_box_title',
 			[
-				'label' => esc_html__( 'Price Title', 'awesome-widgets' ),
+				'label' => esc_html__( 'Price Title', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Standard' ),
+				'default' => esc_html__( 'Standard', 'aee' ),
 			]
 		);
 
@@ -97,10 +97,10 @@ class Awesome_Price extends Widget_Base {
 		$this->add_control(
 			'aee_price_box_amount',
 			[
-				'label' => esc_html__( 'Price Amount', 'awesome-widgets' ),
+				'label' => esc_html__( 'Price Amount', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( '$25' ),
+				'default' => esc_html__( '$25', 'aee' ),
 			]
 		);
 
@@ -108,10 +108,10 @@ class Awesome_Price extends Widget_Base {
 		$this->add_control(
 			'aee_price_box_plan',
 			[
-				'label' => esc_html__( 'Price Plan', 'awesome-widgets' ),
+				'label' => esc_html__( 'Price Plan', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Month' ),
+				'default' => esc_html__( 'Month', 'aee' ),
 			]
 		);
 
@@ -121,10 +121,10 @@ class Awesome_Price extends Widget_Base {
 		$repeater->add_control(
 			'aee_price_box_features',
 			[
-				'label' => esc_html__( 'Features Title', 'awesome-widgets' ),
+				'label' => esc_html__( 'Features Title', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Add New Feature' , 'awesome-widgets' ),
+				'default' => esc_html__( 'Add New Feature' , 'aee' ),
 			]
 		);
 
@@ -132,18 +132,30 @@ class Awesome_Price extends Widget_Base {
 		$this->add_control(
 			'aee_price_box_features_list',
 			[
-				'label' => esc_html__( 'Features List', 'awesome-widgets' ),
+				'label' => esc_html__( 'Features List', 'aee' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'text' => esc_html__( 'List Item #1', 'awesome-widgets' ),
+						'aee_price_box_features' => esc_html__( '5 Page with Elementor', 'aee' ),
 					],
 					[
-						'text' => esc_html__( 'List Item #2', 'awesome-widgets' ),
+						'aee_price_box_features' => esc_html__( 'Design Customization', 'aee' ),
 					],
 					[
-						'text' => esc_html__( 'List Item #3', 'awesome-widgets' ),
+						'aee_price_box_features' => esc_html__( 'Responsive Design', 'aee' ),
+					],
+					[
+						'aee_price_box_features' => esc_html__( 'Content Upload', 'aee' ),
+					],
+					[
+						'aee_price_box_features' => esc_html__( 'Design Customization', 'aee' ),
+					],
+					[
+						'aee_price_box_features' => esc_html__( 'Maintainence', 'aee' ),
+					],
+					[
+						'aee_price_box_features' => esc_html__( 'Support', 'aee' ),
 					],
 				],
 				'title_field' => '{{{ aee_price_box_features }}}',
@@ -154,10 +166,10 @@ class Awesome_Price extends Widget_Base {
 		$this->add_control(
 			'aee_price_box_button_text',
 			[
-				'label' => esc_html__( 'Button Text', 'awesome-widgets' ),
+				'label' => esc_html__( 'Button Text', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Click me', 'awesome-widgets' ),
+				'default' => esc_html__( 'Purchase Now', 'aee' ),
 			]
 		);
 
@@ -165,36 +177,64 @@ class Awesome_Price extends Widget_Base {
 		$this->add_control(
 			'aee_price_box_button_link',
 			[
-				'label' => __( 'Button Link', 'awesome-widgets' ),
+				'label' => __( 'Button Link', 'aee' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'label_block' => true,
-				'placeholder' => 'http://your-link.com',
 				'default' => [
-					'url' => '#',
+					'url' => 'http://anahian.com'
+				],
+			]
+		);
+
+		// Price Alignment
+		$this->add_control(
+			'aee_price_alignment',
+			[
+				'label' => esc_html__( 'Alignment', 'aee' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'separator' => 'before',
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'aee' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'aee' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'aee' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .single-price' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
 		
 		$this->end_controls_section();
-		// End of the CTA Content Tab Section
+		// End of the price Content Tab Section
 		
-		// CTA Layout
+		// Price Layout
 		$this->start_controls_section(
-			'wb_cta_layout_style',
+			'aee_price_layout_style',
 			[
-				'label' => esc_html__( 'Layout', 'webbricks' ),
+				'label' => esc_html__( 'Layout', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
-		// CTA Background Color
+		// Price Background Color
 		$this->add_control(
-			'wb_cta_background_color',
+			'aee_price_background_color',
 			[
-				'label' => esc_html__( 'Background', 'webbricks' ),
+				'label' => esc_html__( 'Background', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .cta' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .single-price' => 'background-color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -202,51 +242,60 @@ class Awesome_Price extends Widget_Base {
 			]
 		);
 
-		// CTA Border Radius
-		$this->add_control(
-			'wb_cta_border_radius',
+		// Price Border
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
 			[
-				'label' => esc_html__( 'Border Radius', 'webbricks' ),
+				'name' => 'aee_price_border',
+				'selector' => '{{WRAPPER}} .single-price',
+			]
+		);	
+
+		// Price Border Radius
+		$this->add_control(
+			'aee_price_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'aee' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
-					'{{WRAPPER}} .cta' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .single-price' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
-		// CTA Padding
+		// Price Padding
 		$this->add_control(
-			'wb_cta_padding',
+			'aee_price_padding',
 			[
-				'label' => esc_html__( 'Padding', 'webbricks' ),
+				'label' => esc_html__( 'Padding', 'aee' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
-					'{{WRAPPER}} .cta' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .single-price' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->end_controls_section();
 
-		// CTA Title Style
+		// Price Title Style
 		$this->start_controls_section(
-			'wb_cta_title_style',
+			'aee_price_title_style',
 			[
-				'label' => esc_html__( 'CTA Content', 'webbricks' ),
+				'label' => esc_html__( 'Title', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
-		// CTA Title Color
+		// Price Title Color
 		$this->add_control(
-			'wb_cta_title_color',
+			'aee_price_title_color',
 			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .cta h2' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -254,12 +303,12 @@ class Awesome_Price extends Widget_Base {
 			]
 		);
 
-		// CTA Title Typography
+		// Price Title Typography
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'wb_cta_title_typography',
-				'selector' => '{{WRAPPER}} .cta h2',
+				'name' => 'aee_price_title_typography',
+				'selector' => '{{WRAPPER}} .price h2',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
 				]
@@ -267,6 +316,257 @@ class Awesome_Price extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		// Price Amount Style
+		$this->start_controls_section(
+			'aee_price_amount_style',
+			[
+				'label' => esc_html__( 'Amount', 'aee' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		// Price Amount Background
+		$this->add_control(
+			'aee_price_amount_bg',
+			[
+				'label' => esc_html__( 'Background', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .price h2' => 'background-color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Price Amount Title
+		$this->add_control(
+			'aee_price_amount_price',
+			[
+				'label' => esc_html__( 'Price', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		// Price Amount Color
+		$this->add_control(
+			'aee_price_amount_color',
+			[
+				'label' => esc_html__( 'Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Price Amount Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'aee_price_amount_typography',
+				'selector' => '{{WRAPPER}} .price h2',
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
+				]
+			]
+		);
+
+		// Price Amount Suffix
+		$this->add_control(
+			'aee_price_amount_suffix',
+			[
+				'label' => esc_html__( 'Suffix', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		// Price Amount Color
+		$this->add_control(
+			'aee_price_amount_suffix_color',
+			[
+				'label' => esc_html__( 'Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Price Amount Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'aee_price_amount_suffix_typography',
+				'selector' => '{{WRAPPER}} .price h2',
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
+				]
+			]
+		);
+		
+		$this->end_controls_section();
+
+		// Price Features Style
+		$this->start_controls_section(
+			'aee_price_features_style',
+			[
+				'label' => esc_html__( 'Features', 'aee' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		// Price Feature Color
+		$this->add_control(
+			'aee_price_feature_color',
+			[
+				'label' => esc_html__( 'Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Price Feature Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'aee_price_feature_typography',
+				'selector' => '{{WRAPPER}} .price h2',
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
+				]
+			]
+		);
+
+		// Price Feature Border Color
+		$this->add_control(
+			'aee_price_feature_border_color',
+			[
+				'label' => esc_html__( 'Border Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon-border' => 'border-color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+				]
+			]
+		);
+
+		$this->end_controls_section();
+
+		// start of the Style tab section
+		$this->start_controls_section(
+			'aee_price_btn_style',
+			[
+				'label' => esc_html__( 'Button', 'aee' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);	
+
+		$this->start_controls_tabs(
+			'aee_price_btn_style_tabs'
+		);
+
+		// Price Button Normal Tab
+		$this->start_controls_tab(
+			'aee_button_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'aee' ),
+			]
+		);
+
+		// Price Button Color
+		$this->add_control(
+			'aee_price_btn_color',
+			[
+				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon-border i' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Price Button Border Color
+		$this->add_control(
+			'aee_price_btn_border_color',
+			[
+				'label' => esc_html__( 'Border Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon-border' => 'border-color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+				]
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Price Button Hover Tab
+		$this->start_controls_tab(
+			'aee_price_button_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'aee' ),
+			]
+		);
+
+		// Price Button Hover Icon Color
+		$this->add_control(
+			'aee_price_btn_bg_hover_color',
+			[
+				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon-border:hover i' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Price Button Hover Background Color
+		$this->add_control(
+			'aee_price_btn_bg_hover_bg',
+			[
+				'label' => esc_html__( 'Background', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .icon-border:hover:after' => 'background-color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+				]
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+		// end of the Style tab section
 
 
 	}

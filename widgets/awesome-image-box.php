@@ -1,6 +1,6 @@
 <?php 
 /**
- * Awesome Image Box
+ * Awesome Image Box Widget.
  *
  * Elementor widget that inserts a image box into the page
  *
