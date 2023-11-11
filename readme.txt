@@ -1,14 +1,53 @@
-=== Web Bricks Elementor Addons ===
-Contributors: nahian91, abir
-Tags: elementor, elementor kit, elementor addons, woocommerce, elementor widgets, elementor templates, elementor widgets for woocommerce, elementor templates for woocommerce, one click template import
-Requires at least: 4.0
-Tested up to: 6.1
-Stable tag: 1.0.10
-Requires PHP: 5.6
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+=== Awesome Widgets ===
+Contributors: nahian91
+Donate link: https://www.anahian.com
+Tags: elementor, elementor addon, profile module, testimonial module, elementor profile widget, elementor testimonial widget
+Requires at least: 5.8
+Tested up to: 6.4.1
+Stable tag: 5.3
+Requires PHP: 7.0
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+Showcase useful elements with card style for elementor page builder.
 
 == Description ==
 
-Web Bricks is a powerful tool with 15+ free add-ons that makes it easy for anyone to create stunning and professional-looking websites, regardless of skill level.
+Awesome Widgets is an elementor add-on to showcase your Number Box, Service Box, Team, Testimonial, List Group,  (our team), testimonials and WordPress posts with card style/design. This is an simple and flexible way to add new elements/widgets to Elementor Page Builder.
+
+*Note:* This plugin is a widget of [Elementor Page Builder](https://wordpress.org/plugins/elementor/) and will only work with Elementor Page Builder installed.
+
+== Installation ==
+
+1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
+2. Activate the plugin through the 'Plugins' screen in WordPress
+
+
+== Frequently Asked Questions ==
+= Can I add multiple Widgets elements with single page? =
+Yes, you can. Awesome Widgets for elementor plugin gives you the ability to add **multiple card styles on same page**. You just need to drag and drop that module multiple times and select different card styles whatever you want.
+
+=  Can I change color or customize card style as per my wish? =
+Yes, You can customize it. We provided all possible options in backend to update it from default Aweosme Widgets.
+
+
+== Screenshots ==
+1. Awesome Heading
+2. Awesome Process
+3. Awesome Team
+4. Awesome Image Box
+5. Awesome Price Plan
+6. Awesome CTA Box
+7. Awesome Testimonials
+8. Awesome About Us
+9. Awesome Number Box
+10. Awesome List Group
+
+== Upgrade Notice ==
+More Features Coming Soon!
+
+== Changelog ==
+
+= 1.0 =
+Release Date: 11 November, 2023
+
+* Initial release on WordPress.org. Enjoy!

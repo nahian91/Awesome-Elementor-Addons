@@ -2,7 +2,7 @@
 /**
  * Awesome Number Box
  *
- * webbricks widget that inserts a counter into the page
+ * aee widget that inserts a Number Box into the page
  *
  * @since 1.0.0
  */
@@ -12,7 +12,7 @@ class Awesome_Number_Box extends Widget_Base {
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve counter widget name.
+	 * Retrieve Number Box widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -34,7 +34,7 @@ class Awesome_Number_Box extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Number Box', 'webbricks' );
+		return esc_html__( 'Number Box', 'aee' );
 	}
 
 	/**
@@ -75,11 +75,10 @@ class Awesome_Number_Box extends Widget_Base {
 		
 		// start of the Content tab section
 	   $this->start_controls_section(
-	       'counter_contents',
+	       'aee_number_box_contents',
 		    [
-		        'label' => esc_html__('Content', 'webbricks'),
-				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
-		   
+		        'label' => esc_html__('Contents', 'aee'),
+				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,		   
 		    ]
 	    );
 
@@ -87,10 +86,10 @@ class Awesome_Number_Box extends Widget_Base {
 		$this->add_control(
 			'aee_number_box_number',
 			[
-				'label' => esc_html__( 'Number', 'awesome-widgets' ),
+				'label' => esc_html__( 'Number', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( '1' ),
+				'default' => esc_html__( '1', 'aee' ),
 			]
 		);
 
@@ -98,7 +97,7 @@ class Awesome_Number_Box extends Widget_Base {
 		$this->add_control(
 			'aee_number_box_title',
 			[
-				'label' => esc_html__( 'Title', 'awesome-widgets' ),
+				'label' => esc_html__( 'Title', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'default' => esc_html__( 'Awesome Heading' ),
@@ -109,10 +108,39 @@ class Awesome_Number_Box extends Widget_Base {
 		$this->add_control(
 			'aee_number_box_des',
 			[
-				'label' => esc_html__( 'Description', 'awesome-widgets' ),
+				'label' => esc_html__( 'Description', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'label_block' => true,
-				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' ),
+				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters', 'aee' ),
+			]
+		);
+
+		// Number Box Alignment
+		$this->add_control(
+			'aee_number_box_alignment',
+			[
+				'label' => esc_html__( 'Alignment', 'aee' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'separator' => 'before',
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'aee' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'aee' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'aee' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .single-number-box' => 'text-align: {{VALUE}};',
+				],
 			]
 		);
 		
@@ -121,21 +149,21 @@ class Awesome_Number_Box extends Widget_Base {
 		
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_counter_layout_style',
+			'aee_number_box_layout_style',
 			[
-				'label' => esc_html__( 'Layout', 'webbricks' ),
+				'label' => esc_html__( 'Layout', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
-		// Counter Background
+		// Number Box Background
 		$this->add_control(
-			'wb_counter_background',
+			'aee_number_box_layout_background',
 			[
-				'label' => esc_html__( 'Background', 'webbricks' ),
+				'label' => esc_html__( 'Background', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .counter-box' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .single-number-box' => 'background-color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -143,37 +171,37 @@ class Awesome_Number_Box extends Widget_Base {
 			]
 		);
 
-		// Counter Border
+		// Number Box Border
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name' => 'wb_counter_border',
-				'selector' => '{{WRAPPER}} .counter-box',
+				'name' => 'aee_number_box_border',
+				'selector' => '{{WRAPPER}} .single-number-box',
 			]
 		);
 
-		// Counter Border Radius
+		// Number Box Border Radius
 		$this->add_control(
-			'wb_counter_border_radius',
+			'aee_number_box_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'webbricks' ),
+				'label' => esc_html__( 'Border Radius', 'aee' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .counter-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .single-number-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 		
-		// Counter Padding
+		// Number Box Padding
 		$this->add_control(
-			'wb_counter_padding',
+			'aee_number_box_padding',
 			[
-				'label' => esc_html__( 'Padding', 'webbricks' ),
+				'label' => esc_html__( 'Padding', 'aee' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .counter-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .single-number-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -182,76 +210,21 @@ class Awesome_Number_Box extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_counter_icon_style',
+			'aee_number_box_number_style',
 			[
-				'label' => esc_html__( 'Icon', 'webbricks' ),
+				'label' => esc_html__( 'Number', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
-		// Icon Color
+		// Number Box Color
 		$this->add_control(
-			'wb_icon_color',
+			'aee_number_box_number_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .counter-number i' => 'color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-				]
-			]
-		);
-
-		// Icon Size
-		$this->add_control(
-			'wb_icon_size',
-			[
-				'label' => esc_html__( 'Icon Size', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem'],
-				'range' => [
-					'px' => [
-						'min' => 50,
-						'max' => 100,
-						'step' => 5,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 55,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .counter-number i' => 'font-size: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-		// end of the Style tab section
-
-		// start of the Style tab section
-		$this->start_controls_section(
-			'wb_counter_number_style',
-			[
-				'label' => esc_html__( 'Number', 'webbricks' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		// Number Color
-		$this->add_control(
-			'wb_number_color',
-			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .counter-content h3 span' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-number-box span' => 'color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
@@ -259,29 +232,14 @@ class Awesome_Number_Box extends Widget_Base {
 			]
 		);
 
-		// Number Typography
+		// Number Box Number Typography
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'wb_number_typography',
-				'selector' => '{{WRAPPER}} .counter-content h3 span',
+				'name' => 'aee_number_box_number_typography',
+				'selector' => '{{WRAPPER}} .single-number-box span',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
-				]
-			]
-		);
-
-		// Number Suffix Color
-		$this->add_control(
-			'wb_number_suffix_color',
-			[
-				'label' => esc_html__( 'Suffix Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .counter-content h3' => 'color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
 				]
 			]
 		);
@@ -291,21 +249,21 @@ class Awesome_Number_Box extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_counter_title_style',
+			'aee_number_box_title_style',
 			[
-				'label' => esc_html__( 'Title', 'webbricks' ),
+				'label' => esc_html__( 'Title', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
-		// Title Color
+		// Number Box Title Color
 		$this->add_control(
-			'wb_title_color',
+			'aee_number_box_title_color',
 			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .counter-content p' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-number-box h4' => 'color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -313,14 +271,53 @@ class Awesome_Number_Box extends Widget_Base {
 			]
 		);
 
-		// Title Typography
+		// Number Box Title Typography
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'wb_counter_title_typography',
-				'selector' => '{{WRAPPER}} .counter-content p',
+				'name' => 'aee_number_box_title_typography',
+				'selector' => '{{WRAPPER}} .single-number-box h4',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
+				]
+			]
+		);
+
+		$this->end_controls_section();
+		// end of the Style tab section
+
+		// start of the Style tab section
+		$this->start_controls_section(
+			'aee_number_box_desc_style',
+			[
+				'label' => esc_html__( 'Description', 'aee' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		// Number Box Description Color
+		$this->add_control(
+			'aee_number_box_desc_color',
+			[
+				'label' => esc_html__( 'Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .single-number-box p' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
+				]
+			]
+		);
+
+		// Number Box Description Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'aee_number_box_desc_typography',
+				'selector' => '{{WRAPPER}} .single-number-box p',
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
 				]
 			]
 		);

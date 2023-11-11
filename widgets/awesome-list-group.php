@@ -2,7 +2,7 @@
 /**
  * Awesome List Group
  *
- * Elementor widget that inserts a brand into the page
+ * Elementor widget that inserts a list into the page
  *
  * @since 1.0.0
  */
@@ -34,7 +34,7 @@ class Awesome_List_Group extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'List Group', 'webbricks' );
+		return esc_html__( 'List Group', 'aee' );
 	}
 
 	/**
@@ -75,11 +75,10 @@ class Awesome_List_Group extends Widget_Base {
 		
 		// start of the Content tab section
 	   $this->start_controls_section(
-	       'brand_contents',
+	       'aee_list_group_contents',
 		    [
-		        'label' => esc_html__('Contents', 'webbricks'),
-				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
-		   
+		        'label' => esc_html__('Contents', 'aee'),
+				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,		   
 		    ]
 	    );
 		
@@ -88,19 +87,20 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Title 
 		$repeater->add_control(
-			'aee_group_list_title',
+			'aee_list_group_title',
 			[
-				'label' => esc_html__( 'List Title', 'ewa-elementor-extension' ),
+				'label' => esc_html__( 'List Title', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
+				'default' => esc_html__('List Item', 'aee')
 			]
 		);
 
 		// List Group Icon
 		$repeater->add_control(
-        	'aee_group_list_icon',
+        	'aee_list_group_icon',
 			[
-				'label'         => esc_html__('List Icon', 'ewa-elementor-extension'),
+				'label'         => esc_html__('List Icon', 'aee'),
 				'type'          => \Elementor\Controls_Manager::ICON,
 				'label_block'   => true,
 				'default' => 'fa fa-star',
@@ -109,458 +109,174 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group List
 		$this->add_control(
-			'aee_group_list',
+			'aee_list_group',
 			[
-				'label' => esc_html__( 'List Group List', 'ewa-elementor-extension' ),
+				'label' => esc_html__( 'List Group List', 'aee' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'aee_group_list_title' => __( 'List Item 1', 'ewa-elementor-extension' )
+						'aee_list_group_title' => __( 'List Item 1', 'aee' )
 					],
 					[
-						'aee_group_list_title' => __( 'List Item 2', 'ewa-elementor-extension' )
+						'aee_list_group_title' => __( 'List Item 2', 'aee' )
 					],
 					[
-						'aee_group_list_title' => __( 'List Item 3', 'ewa-elementor-extension' )
+						'aee_list_group_title' => __( 'List Item 3', 'aee' )
 					],
 				],
-				'title_field' => '{{{ aee_group_list_title }}}',
+				'title_field' => '{{{ aee_list_group_title }}}',
 			]
 		);		
 		
 		$this->end_controls_section();
 		// end of the Content tab section
-
-		// start of the Content tab section
-		$this->start_controls_section(
-			'wb_brand_logos',
-			 [
-				 'label' => esc_html__('Logos', 'webbricks'),
-				 'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
-			
-			 ]
-		 );
-		 
-		$repeater = new \Elementor\Repeater();
-
-		// Brand Logo Image
-		$repeater->add_control(
-			'wb_brand_logo_img',
-			[
-				'label' => esc_html__( 'Choose Image', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-					'url' => plugin_dir_url(__DIR__) . 'assets/images/logo1.png',
-				]
-			]
-		);
-
-		$this->add_control(
-			'wb_brand',
-			[
-				'label' => esc_html__( 'Brands', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
-				'fields' => $repeater->get_controls(),
-				'separator' => 'before',
-				'default' => [
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo1.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo2.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo3.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo4.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo5.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo6.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo7.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo8.png',
-							]
-						]
-					],
-					[
-						'wb_brand_logo_img' => [
-							'default' => [
-								'url' => plugin_dir_url(__DIR__) . 'assets/images/logo9.png',
-							]
-						]
-					]
-				]
-			]
-		);
-
-		$this->add_control(
-			'important_note',
-			[
-				'label' => esc_html__( 'Suggestion: 9 brand logos look good, but you can increase or reduce the number of logos as needed.', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'content_classes' => 'notice-style',
-			]
-		);
-		 
-		$this->end_controls_section();
-		 // end of the Content tab section
 		
 		// start of the Style tab section
 		$this->start_controls_section(
-			'style_section',
+			'aee_list_group_style',
 			[
-				'label' => esc_html__( 'Contents', 'webbricks' ),
+				'label' => esc_html__( 'Contents', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);	
 
-		// Brand Separator Options
+		// List Group Layout Options
 		$this->add_control(
 			'wb_brand_sep_options',
 			[
-				'label' => esc_html__( 'Bullet', 'webbricks' ),
+				'label' => esc_html__( 'Layouts', 'aee' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
-		// Brand Separator Background
+		// List Group Background Color
 		$this->add_control(
-			'wb_brand_sep_background',
+			'aee_list_group_background_color',
 			[
-				'label' => esc_html__( 'Color', 'webbricks' ),
+				'label' => esc_html__( 'Background', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .section-title h4:before' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .list-item' => 'background-color: {{VALUE}}',
 				],
 				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 				]
 			]
 		);
 
-		// Brand Separator Round
-		$this->add_control(
-			'wb_brand_sep_round',
+		// List Group Border
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
 			[
-				'label' => esc_html__( 'Border Radius', 'webbricks' ),
+				'name' => 'aee_list_group_border',
+				'selector' => '{{WRAPPER}} .list-item',
+			]
+		);	
+
+		// List Group Border Radius
+		$this->add_control(
+			'aee_list_group_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'aee' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%'],
+				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
-					'{{WRAPPER}} .section-title h4:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .list-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
-		// Brand Subtitle Options
+		// List Group Padding
 		$this->add_control(
-			'wb_brand_subtitle_options',
+			'aee_list_group_padding',
 			[
-				'label' => esc_html__( 'Sub Heading', 'webbricks' ),
+				'label' => esc_html__( 'Padding', 'aee' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem'],
+				'selectors' => [
+					'{{WRAPPER}} .list-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		// List Group Icon Options
+		$this->add_control(
+			'aee_list_group_icon_options',
+			[
+				'label' => esc_html__( 'Icon', 'aee' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 		
-		// Brand Subtitle Color
+		// List Group Icon Color
 		$this->add_control(
-			'wb_brand_subtitle_color',
+			'aee_list_group_icon_color',
 			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .section-title h4' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .list-item i' => 'color: {{VALUE}}',
 				],
 			]
 		);
 
-		// // Brand Subtitle Typography
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+		// List Group Icon Border Color
+		$this->add_control(
+			'aee_list_group_icon_border_color',
 			[
-				'name' => 'wb_brand_subtitle_typography',
-				'selector' => '{{WRAPPER}} .section-title h4',
+				'label' => esc_html__( 'Border Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
-				]
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .list-item i' => 'border-color: {{VALUE}}',
+				],
 			]
 		);
 
-		// Brand Title Options
+		// List Group Title Options
 		$this->add_control(
-			'wb_brand_title_options',
+			'aee_list_group_title_options',
 			[
-				'label' => esc_html__( 'Heading', 'webbricks' ),
+				'label' => esc_html__( 'Heading', 'aee' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
-		// Brand Title Color
+		// List Group Title Color
 		$this->add_control(
-			'wb_brand_title_color',
+			'aee_list_group_title_color',
 			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .list-item h4' => 'color: {{VALUE}}',
 				],
 			]
 		);
 
-		// Brand Title Typography
+		// List Group Title Typography
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'wb_brand_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h2',
+				'name' => 'aee_list_group_title_typography',
+				'selector' => '{{WRAPPER}} .list-item h4',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_PRIMARY,
 				]
 			]
-		);
-
-		// Brand Description Options
-		$this->add_control(
-			'wb_brand_desc_options',
-			[
-				'label' => esc_html__( 'Description', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before'
-			]
-		);
-
-		// Brand Description Color
-		$this->add_control(
-			'wb_brand_desc_color',
-			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .brand p' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		// Brand Description Typography
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'wb_brand_desc_typography',
-				'selector' => '{{WRAPPER}} .brand p',
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
-				]
-			]
-		);
-
-		$this->end_controls_section();
-
-		// start of the Style tab section
-		$this->start_controls_section(
-			'brand_logos_btn_section',
-			[
-				'label' => esc_html__( 'Buttons', 'webbricks' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
 		);	
-
-		$this->start_controls_tabs(
-			'wp_brand_btn_style_tab'
-		);
-
-		// Brand Button Normal Tab
-		$this->start_controls_tab(
-			'wb_brand_btn_normal_tab',
-			[
-				'label' => esc_html__( 'Normal', 'webbricks' ),
-			]
-		);
-
-		// Brand Button Color
-		$this->add_control(
-			'wb_brand_btn_color',
-			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .btn-border' => 'color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_ACCENT,
-				]
-			]
-		);
-
-		// Brand Button Border
-		$this->add_control(
-			'wb_brand_btn_border',
-			[
-				'label' => esc_html__( 'Border Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .btn-border' => 'border-color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-				]
-			]
-		);
-
-		// Brand Button Typography
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'wb_brand_btn_typography',
-				'selector' => '{{WRAPPER}} .btn-border',
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_ACCENT,
-				]
-			]
-		);
-
-		$this->end_controls_tab();
-
-		// Brand Button Hover Tab
-		$this->start_controls_tab(
-			'wb_brand_btn_hover_tab',
-			[
-				'label' => esc_html__( 'Hover', 'webbricks' ),
-			]
-		);
-
-		// Brand Button Hover Color
-		$this->add_control(
-			'wb_brand_btn_hover_color',
-			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .btn-border:hover' => 'color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-				]
-			]
-		);
-
-		// Brand Button Hover Background
-		$this->add_control(
-			'wb_brand_btn_hover_bg',
-			[
-				'label' => esc_html__( 'Background', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .btn-border:hover:before' => 'background-color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
-				]
-			]
-		);
-
-		// Brand Button Hover Border
-		$this->add_control(
-			'wb_brand_btn_hover_border',
-			[
-				'label' => esc_html__( 'Border Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .btn-border:hover' => 'border-color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
-				]
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->end_controls_section();
-
-		// start of the Logos tab section
-		$this->start_controls_section(
-			'brand_logos_style_section',
-			[
-				'label' => esc_html__( 'Logos', 'webbricks' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);	
-
-		// Logos Padding
-		$this->add_control(
-			'wb_logos_padding',
-			[
-				'label' => esc_html__( 'Padding', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em', 'rem'],
-				'selectors' => [
-					'{{WRAPPER}} .brand-img img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		// Logos Border Radius
-		$this->add_control(
-			'wb_logos_border_radius',
-			[
-				'label' => esc_html__( 'Border Radius', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em', 'rem'],
-				'selectors' => [
-					'{{WRAPPER}} .brand-img img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
 
 		$this->end_controls_section();
 		// end of the Style tab section
@@ -579,17 +295,15 @@ class Awesome_List_Group extends Widget_Base {
 		// get our input from the widget settings.
 		$settings = $this->get_settings_for_display();
 
-		if ( $settings['aee_group_list'] ) {  ?>
-			
+		if ( $settings['aee_list_group'] ) {  ?>			
 			<?php 
-			foreach (  $settings['aee_group_list'] as $item ) { 
-
-				$aee_group_list_title = $item['aee_group_list_title'];
-				$aee_group_list_icon =  $item['aee_group_list_icon'];
+			foreach (  $settings['aee_list_group'] as $item ) { 
+				$aee_group_list_title = $item['aee_list_group_title'];
+				$aee_group_list_icon =  $item['aee_list_group_icon'];
 			?>
 				<div class="list-group">
 					<div class="list-item">
-						<i class="<?php echo $aee_group_list_icon;?>"></i> <h4><?php echo $aee_group_list_title;?></h4>
+						<i class="<?php echo esc_attr($aee_group_list_icon);?>"></i> <h4><?php echo $aee_group_list_title;?></h4>
 					</div>
 				</div>
 			<?php } ?>

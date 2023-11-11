@@ -113,7 +113,6 @@ if (!class_exists('AEE')) {
         function register_widgets( $widgets_manager ) {
             
             // Load Elementor Featured Service
-            require_once $this->this_dir . 'widgets/awesome-about.php';
             require_once $this->this_dir . 'widgets/awesome-cta.php';
             require_once $this->this_dir . 'widgets/awesome-heading.php';
             require_once $this->this_dir . 'widgets/awesome-image-box.php';
@@ -121,20 +120,15 @@ if (!class_exists('AEE')) {
             require_once $this->this_dir . 'widgets/awesome-number-box.php';
             require_once $this->this_dir . 'widgets/awesome-price.php';
             require_once $this->this_dir . 'widgets/awesome-process.php';
-            require_once $this->this_dir . 'widgets/awesome-team.php';
-            require_once $this->this_dir . 'widgets/awesome-testimonial.php';
             
             // // Register Featured Service Widge
-            $widgets_manager->register( new \ELementor\Awesome_About() );
-            $widgets_manager->register( new \ELementor\Awesome_CTA() );
             $widgets_manager->register( new \ELementor\Awesome_Heading() );
             $widgets_manager->register( new \ELementor\Awesome_Image_Box() );
             $widgets_manager->register( new \ELementor\Awesome_List_Group() );
             $widgets_manager->register( new \ELementor\Awesome_Number_Box() );
             $widgets_manager->register( new \ELementor\Awesome_Price() );
             $widgets_manager->register( new \ELementor\Awesome_Process() );
-            $widgets_manager->register( new \ELementor\Awesome_Team() );
-            $widgets_manager->register( new \ELementor\Awesome_Testimonial() );
+            $widgets_manager->register( new \ELementor\Awesome_CTA() );
             
         }
 

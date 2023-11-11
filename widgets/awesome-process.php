@@ -1,8 +1,8 @@
 <?php
 /**
- * Awesome Process
+ * Awesome Process Widget.
  *
- * Elementor widget that inserts a faq into the page
+ * Elementor widget that inserts a process into the page
  *
  * @since 1.0.0
  */
@@ -34,7 +34,7 @@ class Awesome_Process extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Process', 'webbricks' );
+		return esc_html__( 'Process', 'aee' );
 	}
 
 	/**
@@ -75,9 +75,9 @@ class Awesome_Process extends Widget_Base {
 		
 		// start of the Content tab section
 	   $this->start_controls_section(
-	       'faq_content',
+	       'aee_process_contents',
 		    [
-		        'label' => esc_html__('Content', 'webbricks'),
+		        'label' => esc_html__('Content', 'aee'),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 		   
 		    ]
@@ -87,7 +87,7 @@ class Awesome_Process extends Widget_Base {
 		$this->add_control(
 			'aee_process_title',
 			[
-				'label' => esc_html__( 'Title', 'awesome-widgets' ),
+				'label' => esc_html__( 'Title', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'default' => esc_html__( 'First Step' ),
@@ -98,7 +98,7 @@ class Awesome_Process extends Widget_Base {
 		$this->add_control(
 			'aee_process_number',
 			[
-				'label' => esc_html__( 'Number', 'awesome-widgets' ),
+				'label' => esc_html__( 'Number', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'default' => esc_html__( '1' ),
@@ -109,10 +109,39 @@ class Awesome_Process extends Widget_Base {
 		$this->add_control(
 			'aee_process_des',
 			[
-				'label' => esc_html__( 'Description', 'awesome-widgets' ),
+				'label' => esc_html__( 'Description', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'label_block' => true,
-				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content' ),
+				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content', 'aee' ),
+			]
+		);
+
+		// Process Alignment
+		$this->add_control(
+			'aee_process_alignment',
+			[
+				'label' => esc_html__( 'Alignment', 'aee' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'separator' => 'before',
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'aee' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'aee' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'aee' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .single-process' => 'text-align: {{VALUE}};',
+				],
 			]
 		);
 		
@@ -121,28 +150,87 @@ class Awesome_Process extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_faq_options',
+			'aee_process_title_options',
 			[
-				'label' => esc_html__( 'Layouts', 'webbricks' ),
+				'label' => esc_html__( 'Title', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
+		// Process Background Color
 		$this->add_control(
-			'wb_faq_border_color',
+			'aee_process_title_background_color',
 			[
-				'label' => esc_html__( 'Border Color', 'webbricks' ),
+				'label' => esc_html__( 'Background', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Core\Schemes\Color::get_type(),
-					'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+				'selectors' => [
+					'{{WRAPPER}} .single-process h6' => 'background-color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
-				],
+				]
+			]
+		);
+
+		// Process Border
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'aee_process_title_border',
+				'selector' => '{{WRAPPER}} .single-process h6',
+			]
+		);	
+
+		// Process Border Radius
+		$this->add_control(
+			'aee_process_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'aee' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
-					'{{WRAPPER}} .faq' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .single-process h6' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+
+		// Process Padding
+		$this->add_control(
+			'aee_process_padding',
+			[
+				'label' => esc_html__( 'Padding', 'aee' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem'],
+				'selectors' => [
+					'{{WRAPPER}} .single-process h6' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		// Process Title Color
+		$this->add_control(
+			'aee_process_title_color',
+			[
+				'label' => esc_html__( 'Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .single-process h6' => 'color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Process Title Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'aee_process_title_typography',
+				'selector' => '{{WRAPPER}} .single-process h6',
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
+				]
 			]
 		);
 
@@ -151,18 +239,18 @@ class Awesome_Process extends Widget_Base {
 		
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_faq_title_options',
+			'aee_process_number_options',
 			[
-				'label' => esc_html__( 'FAQ Question', 'webbricks' ),
+				'label' => esc_html__( 'Number', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 		
-		// FAQ Title Color
+		// Process Number Color
 		$this->add_control(
-			'wb_faq_title_color',
+			'aee_process_number_color',
 			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Core\Schemes\Color::get_type(),
@@ -172,45 +260,7 @@ class Awesome_Process extends Widget_Base {
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .faq li span' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		// FAQ Title Border Color
-		$this->add_control(
-			'wb_faq_title_border',
-			[
-				'label' => esc_html__( 'Border Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Core\Schemes\Color::get_type(),
-					'value' => \Elementor\Core\Schemes\Color::COLOR_1,
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .faq li' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
-
-		// FAQ Title Border Active Color
-		$this->add_control(
-			'wb_faq_title_border_active_color',
-			[
-				'label' => esc_html__( 'Border Active', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Core\Schemes\Color::get_type(),
-					'value' => \Elementor\Core\Schemes\Color::COLOR_1,
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .faq li span.active' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .single-process h6 span' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -219,30 +269,19 @@ class Awesome_Process extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'wb_faq_title_typography',
-				'selector' => '{{WRAPPER}} .faq li span',
+				'name' => 'aee_process_number_typography',
+				'selector' => '{{WRAPPER}} .single-process h6 span',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
 				]
 			]
 		);
 
-		$this->end_controls_section();
-
-		// start of the Style tab section
-		$this->start_controls_section(
-			'wb_faq_desc_options',
-			[
-				'label' => esc_html__( 'FAQ Answer', 'webbricks' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-		
-		// FAQ Description Color
+		// Process Number Background
 		$this->add_control(
-			'wb_faq_desc_color',
+			'aee_process_number_bg',
 			[
-				'label' => esc_html__( 'Text Color', 'webbricks' ),
+				'label' => esc_html__( 'Background', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Core\Schemes\Color::get_type(),
@@ -252,69 +291,51 @@ class Awesome_Process extends Widget_Base {
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .faq li p' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-process h6 span' => 'background-color: {{VALUE}}',
 				],
-			]
-		);
-		
-		// FAQ Description Typography
-		$this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'wb_faq_desc_typography',
-				'selector' => '{{WRAPPER}} .faq li p',
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
-				]
 			]
 		);
 
 		$this->end_controls_section();
+		// end of the Style tab section
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_faq_icon_options',
+			'aee_process_desc_options',
 			[
-				'label' => esc_html__( 'Icon', 'webbricks' ),
+				'label' => esc_html__( 'Description', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		// FAQ Icon Color
+		
+		// Process Description Color
 		$this->add_control(
-			'wb_faq_icon_color',
+			'aee_process_desc_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'webbricks' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Core\Schemes\Color::get_type(),
 					'value' => \Elementor\Core\Schemes\Color::COLOR_1,
 				],
 				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_ACCENT,
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .faq span:after' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-process p' => 'color: {{VALUE}}',
 				],
 			]
 		);
-
-		// FAQ Icon Active Color
-		$this->add_control(
-			'wb_faq_icon_active_color',
+		
+		// Process Description Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Active Color', 'webbricks' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => \Elementor\Core\Schemes\Color::get_type(),
-					'value' => \Elementor\Core\Schemes\Color::COLOR_1,
-				],
+				'name' => 'aee_process_desc_typography',
+				'selector' => '{{WRAPPER}} .single-process p',
 				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-				],
-				'selectors' => [
-					'{{WRAPPER}} span.active::after' => 'color: {{VALUE}}',
-				],
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
+				]
 			]
 		);
 

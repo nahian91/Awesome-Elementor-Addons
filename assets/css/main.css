@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-
 /* Common CSS */
 img{
     max-width:100%;
+}
+a{
+  transition: .3s;
 }
 h1, h2, h3, h4, h5, h6{
     margin:0;

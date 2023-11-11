@@ -12,7 +12,7 @@ class Awesome_Image_Box extends Widget_Base {
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve blog widget name.
+	 * Retrieve Image Box widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -26,7 +26,7 @@ class Awesome_Image_Box extends Widget_Base {
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve blog widget title.
+	 * Retrieve image box widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -40,7 +40,7 @@ class Awesome_Image_Box extends Widget_Base {
 	/**
 	 * Get widget icon.
 	 *
-	 * Retrieve blog widget icon.
+	 * Retrieve image box widget icon.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -54,7 +54,7 @@ class Awesome_Image_Box extends Widget_Base {
 	/**
 	 * Get widget categories.
 	 *
-	 * Retrieve the list of categories the blog widget belongs to.
+	 * Retrieve the list of categories the Image Box widget belongs to.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -102,7 +102,7 @@ class Awesome_Image_Box extends Widget_Base {
 				'label' => esc_html__( 'Title', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Awesome Heading' ),
+				'default' => esc_html__( 'Awesome Heading', 'aee' ),
 			]
 		);
 
@@ -121,10 +121,10 @@ class Awesome_Image_Box extends Widget_Base {
 		$this->add_control(
 			'aee_image_box_show_btn',
 			[
-				'label' => esc_html__( 'Show Button?', 'webbricks' ),
+				'label' => esc_html__( 'Show Button?', 'aee' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'webbricks' ),
-				'label_off' => esc_html__( 'Hide', 'webbricks' ),
+				'label_on' => esc_html__( 'Show', 'aee' ),
+				'label_off' => esc_html__( 'Hide', 'aee' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'separator' => 'before'
@@ -135,10 +135,10 @@ class Awesome_Image_Box extends Widget_Base {
 		$this->add_control(
 		    'aee_image_box_btn_title',
 			[
-			    'label' => esc_html__('Button Text', 'webbricks'),
+			    'label' => esc_html__('Button Text', 'aee'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__('Click To Read More', 'webbricks'),
+				'default' => esc_html__('Read More', 'aee'),
 				'separator' => 'before',
 				'condition' => [
 					'aee_image_box_show_btn' => 'yes'
@@ -150,7 +150,7 @@ class Awesome_Image_Box extends Widget_Base {
 		$this->add_control(
 		    'aee_image_box_btn_link',
 			[
-			    'label' => esc_html__( 'Button Link', 'webbricks' ),
+			    'label' => esc_html__( 'Button Link', 'aee' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'default' => [
 					'url' => 'https://anahian.com/',
@@ -267,6 +267,15 @@ class Awesome_Image_Box extends Widget_Base {
 			]
 		);	
 
+		$this->add_control(
+			'aee_image_box_title_options',
+			[
+				'label' => esc_html__( 'Title', 'aee' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
 		// Title Color
 		$this->add_control(
 			'aee_image_box_title_color',
@@ -291,6 +300,15 @@ class Awesome_Image_Box extends Widget_Base {
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_ACCENT,
 				]
+			]
+		);
+
+		$this->add_control(
+			'aee_image_box_desc_options',
+			[
+				'label' => esc_html__( 'Description', 'aee' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
 			]
 		);
 
@@ -326,33 +344,36 @@ class Awesome_Image_Box extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'wb_blog_button_style',
+			'aee_image_box_btn_style',
 			[
 				'label' => esc_html__( 'Button', 'aee' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'aee_image_box_show_btn' => 'yes'
+				],
 			]
 		);	
 
 		$this->start_controls_tabs(
-			'wb_blogs_button_style_tabs'
+			'aee_image_box_btn_style_tabs'
 		);
 
-		// Blog Button Normal Tab
+		// Image Box Button Normal Tab
 		$this->start_controls_tab(
-			'button_normal_tab',
+			'aee_image_box_btn_normal_tab',
 			[
 				'label' => esc_html__( 'Normal', 'aee' ),
 			]
 		);
 
-		// Blog Button Color
+		// Image Box Button Color
 		$this->add_control(
-			'wb_blog_btn_color',
+			'aee_image_box_btn_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon-border i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-image-box a' => 'color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -360,57 +381,39 @@ class Awesome_Image_Box extends Widget_Base {
 			]
 		);
 
-		// Blog Button Border Color
-		$this->add_control(
-			'wb_blog_btn_border_color',
+		// Image Box Button Typoghraphy
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon-border' => 'border-color: {{VALUE}}',
-				],
+				'name' => 'aee_image_box_btn_typography',
+				'selector' => '{{WRAPPER}} .single-image-box a',
 				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_ACCENT,
 				]
 			]
 		);
 
 		$this->end_controls_tab();
 
-		// Blog Button Hover Tab
+		// Image Box Button Hover Tab
 		$this->start_controls_tab(
-			'wb_blog_button_hover_tab',
+			'aee_image_box_btn_hover_tab',
 			[
 				'label' => esc_html__( 'Hover', 'aee' ),
 			]
 		);
 
-		// Blog Button Hover Icon Color
+		// Image Box Button Color
 		$this->add_control(
-			'wb_blog_btn_bg_hover_color',
+			'aee_image_box_btn_hover_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'aee' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .icon-border:hover i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-image-box a:hover' => 'color: {{VALUE}}',
 				],
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-				]
-			]
-		);
-
-		// Blog Button Hover Background Color
-		$this->add_control(
-			'wb_blog_btn_bg_hover_bg',
-			[
-				'label' => esc_html__( 'Background', 'aee' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .icon-border:hover:after' => 'background-color: {{VALUE}}',
-				],
-				'global' => [
-					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 				]
 			]
 		);
@@ -438,11 +441,20 @@ class Awesome_Image_Box extends Widget_Base {
 		$aee_image_box_image = $settings['aee_image_box_image']['url'];
 		$aee_image_box_title = $settings['aee_image_box_title'];
 		$aee_image_box_des = $settings['aee_image_box_des'];
+		$aee_image_box_btn_title = $settings['aee_image_box_btn_title'];
+		$aee_image_box_btn_link = $settings['aee_image_box_btn_link']['url'];
        ?>
 			<div class="single-image-box">
 				<img src="<?php echo $aee_image_box_image;?>">
 				<h4><?php echo $aee_image_box_title;?></h4>
 				<p><?php echo $aee_image_box_des;?></p>
+				<?php 
+					if($aee_image_box_btn_link) {
+						?>
+							<a href="<?php echo esc_url($aee_image_box_btn_link);?>"><?php echo $aee_image_box_btn_title;?></a>
+						<?php
+					}
+				?>
 			</div>
        <?php
 	}

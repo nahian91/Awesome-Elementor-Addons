@@ -2,7 +2,7 @@
 /**
  * Awesome Heading Widget.
  *
- * Elementor widget that inserts a blog into the page
+ * Elementor widget that inserts a heading into the page
  *
  * @since 1.0.0
  */
@@ -85,7 +85,7 @@ class Awesome_Heading extends Widget_Base {
 
 		// Heading Sub Heading
 		$this->add_control(
-			'aee_heading_sub_heading',
+			'aee_sub_heading',
 			[
 				'label' => esc_html__( 'Sub Heading', 'aee' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
@@ -267,6 +267,46 @@ class Awesome_Heading extends Widget_Base {
 			]
 		);
 
+		// Separator Options
+		$this->add_control(
+			'aee_sep_options',
+			[
+				'label' => esc_html__( 'Separator', 'aee' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before'
+			]
+		);
+
+		// Separator 1 Color
+		$this->add_control(
+			'aee_sep1_color',
+			[
+				'label' => esc_html__( 'Separator 1 Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .section-title h4::before' => 'background-color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
+				]
+			]
+		);
+
+		// Separator 2 Color
+		$this->add_control(
+			'aee_sep2_color',
+			[
+				'label' => esc_html__( 'Separator 2 Color', 'aee' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .section-title h4::after' => 'background-color: {{VALUE}}',
+				],
+				'global' => [
+					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+				]
+			]
+		);
+
 		$this->end_controls_section();
 		// end of the Style tab section
 	}
@@ -282,14 +322,14 @@ class Awesome_Heading extends Widget_Base {
 	protected function render() {
 		// get our input from the widget settings.
 		$settings = $this->get_settings_for_display();
-		$aee_heading_sub_title = $settings['aee_heading_sub_title'];
-		$aee_heading_title = $settings['aee_heading_title'];
-		$aee_heading_des = $settings['aee_heading_des'];
+		$aee_sub_heading = $settings['aee_sub_heading'];
+		$aee_heading = $settings['aee_heading'];
+		$aee_heading_desc = $settings['aee_heading_desc'];
        ?>
 			<div class="section-title">
-				<span><?php echo $aee_heading_sub_title;?></span>
-				<h4><?php echo $aee_heading_title;?></h4>
-				<p><?php echo $aee_heading_des;?></p>
+				<span><?php echo $aee_sub_heading;?></span>
+				<h4><?php echo $aee_heading;?></h4>
+				<p><?php echo $aee_heading_desc;?></p>
 			</div>
        <?php
 	}
