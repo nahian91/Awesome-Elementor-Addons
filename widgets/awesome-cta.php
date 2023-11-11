@@ -48,7 +48,7 @@ class Awesome_CTA extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-products';
+		return 'eicon-call-to-action';
 	}
 
 	/**

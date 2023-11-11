@@ -49,7 +49,7 @@ class Awesome_About extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-single-post';
+		return 'eicon-info-circle';
 	}
 
 	/**

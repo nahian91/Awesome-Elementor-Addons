@@ -48,7 +48,7 @@ class Awesome_Process extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-accordion';
+		return 'eicon-checkbox';
 	}
 
 	/**

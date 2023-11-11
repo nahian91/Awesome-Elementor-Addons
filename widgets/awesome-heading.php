@@ -49,7 +49,7 @@ class Awesome_Heading extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-person';
+		return 'eicon-heading';
 	}
 
 	/**

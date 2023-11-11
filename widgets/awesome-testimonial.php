@@ -49,7 +49,7 @@ class Awesome_Testimonial extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-icon-box';
+		return 'eicon-testimonial-carousel';
 	}
 
 	/**

@@ -48,7 +48,7 @@ class Awesome_Price extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-call-to-action';
+		return 'eicon-price-table';
 	}
 
 	/**

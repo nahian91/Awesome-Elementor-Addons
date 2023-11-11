@@ -48,7 +48,7 @@ class Awesome_List_Group extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-logo';
+		return 'eicon-bullet-list';
 	}
 
 	/**
