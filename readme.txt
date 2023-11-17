@@ -4,7 +4,7 @@ Donate link: https://www.anahian.com
 Tags: elementor, elementor addon, profile module, testimonial module, elementor profile widget, elementor testimonial widget
 Requires at least: 5.8
 Tested up to: 6.4.1
-Stable tag: 5.3
+Stable tag: 1.0.12
 Requires PHP: 7.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 

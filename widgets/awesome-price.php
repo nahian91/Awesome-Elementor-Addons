@@ -34,7 +34,7 @@ class Awesome_Price extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Price', 'aee' );
+		return esc_html__( 'Price', 'awesome-widgets' );
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Awesome_Price extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'aee-elementor' ];
+		return [ 'awesome-widgets-elementor' ];
 	}
 
 	/**
@@ -75,43 +75,43 @@ class Awesome_Price extends Widget_Base {
 		
 		// Start of the price Content Tab Section
 	   $this->start_controls_section(
-	       'aee_price_content',
+	       'awea_price_content',
 		    [
-		        'label' => esc_html__('Content', 'aee'),
+		        'label' => esc_html__('Content', 'awesome-widgets'),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT		   
 		    ]
 	    );
 		
 		// Price Title
 		$this->add_control(
-			'aee_price_box_title',
+			'awea_price_box_title',
 			[
-				'label' => esc_html__( 'Price Title', 'aee' ),
+				'label' => esc_html__( 'Price Title', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Standard', 'aee' ),
+				'default' => esc_html__( 'Standard', 'awesome-widgets' ),
 			]
 		);
 
 		// Price Amount
 		$this->add_control(
-			'aee_price_box_amount',
+			'awea_price_box_amount',
 			[
-				'label' => esc_html__( 'Price Amount', 'aee' ),
+				'label' => esc_html__( 'Price Amount', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( '$25', 'aee' ),
+				'default' => esc_html__( '$25', 'awesome-widgets' ),
 			]
 		);
 
 		// Price Plan
 		$this->add_control(
-			'aee_price_box_plan',
+			'awea_price_box_plan',
 			[
-				'label' => esc_html__( 'Price Plan', 'aee' ),
+				'label' => esc_html__( 'Price Plan', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Month', 'aee' ),
+				'default' => esc_html__( 'Month', 'awesome-widgets' ),
 			]
 		);
 
@@ -119,65 +119,65 @@ class Awesome_Price extends Widget_Base {
 
 		// Repeater for Price List
 		$repeater->add_control(
-			'aee_price_box_features',
+			'awea_price_box_features',
 			[
-				'label' => esc_html__( 'Features Title', 'aee' ),
+				'label' => esc_html__( 'Features Title', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Add New Feature' , 'aee' ),
+				'default' => esc_html__( 'Add New Feature' , 'awesome-widgets' ),
 			]
 		);
 
 		// Features List
 		$this->add_control(
-			'aee_price_box_features_list',
+			'awea_price_box_features_list',
 			[
-				'label' => esc_html__( 'Features List', 'aee' ),
+				'label' => esc_html__( 'Features List', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'aee_price_box_features' => esc_html__( '5 Page with Elementor', 'aee' ),
+						'awea_price_box_features' => esc_html__( '5 Page with Elementor', 'awesome-widgets' ),
 					],
 					[
-						'aee_price_box_features' => esc_html__( 'Design Customization', 'aee' ),
+						'awea_price_box_features' => esc_html__( 'Design Customization', 'awesome-widgets' ),
 					],
 					[
-						'aee_price_box_features' => esc_html__( 'Responsive Design', 'aee' ),
+						'awea_price_box_features' => esc_html__( 'Responsive Design', 'awesome-widgets' ),
 					],
 					[
-						'aee_price_box_features' => esc_html__( 'Content Upload', 'aee' ),
+						'awea_price_box_features' => esc_html__( 'Content Upload', 'awesome-widgets' ),
 					],
 					[
-						'aee_price_box_features' => esc_html__( 'Design Customization', 'aee' ),
+						'awea_price_box_features' => esc_html__( 'Design Customization', 'awesome-widgets' ),
 					],
 					[
-						'aee_price_box_features' => esc_html__( 'Maintainence', 'aee' ),
+						'awea_price_box_features' => esc_html__( 'Maintainence', 'awesome-widgets' ),
 					],
 					[
-						'aee_price_box_features' => esc_html__( 'Support', 'aee' ),
+						'awea_price_box_features' => esc_html__( 'Support', 'awesome-widgets' ),
 					],
 				],
-				'title_field' => '{{{ aee_price_box_features }}}',
+				'title_field' => '{{{ awea_price_box_features }}}',
 			]
 		);
 
 		// Price Plan Button Text
 		$this->add_control(
-			'aee_price_box_button_text',
+			'awea_price_box_button_text',
 			[
-				'label' => esc_html__( 'Button Text', 'aee' ),
+				'label' => esc_html__( 'Button Text', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'Purchase Now', 'aee' ),
+				'default' => esc_html__( 'Purchase Now', 'awesome-widgets' ),
 			]
 		);
 
 		// Price Plan Button Link
 		$this->add_control(
-			'aee_price_box_button_link',
+			'awea_price_box_button_link',
 			[
-				'label' => __( 'Button Link', 'aee' ),
+				'label' => __( 'Button Link', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'label_block' => true,
 				'default' => [
@@ -188,22 +188,22 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Alignment
 		$this->add_control(
-			'aee_price_alignment',
+			'awea_price_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'aee' ),
+				'label' => esc_html__( 'Alignment', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'separator' => 'before',
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'aee' ),
+						'title' => esc_html__( 'Left', 'awesome-widgets' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'aee' ),
+						'title' => esc_html__( 'Center', 'awesome-widgets' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'aee' ),
+						'title' => esc_html__( 'Right', 'awesome-widgets' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -220,18 +220,18 @@ class Awesome_Price extends Widget_Base {
 		
 		// Price Layout
 		$this->start_controls_section(
-			'aee_price_layout_style',
+			'awea_price_layout_style',
 			[
-				'label' => esc_html__( 'Layout', 'aee' ),
+				'label' => esc_html__( 'Layout', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		// Price Background Color
 		$this->add_control(
-			'aee_price_background_color',
+			'awea_price_background_color',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .single-price' => 'background-color: {{VALUE}}',
@@ -246,16 +246,16 @@ class Awesome_Price extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name' => 'aee_price_border',
+				'name' => 'awea_price_border',
 				'selector' => '{{WRAPPER}} .single-price',
 			]
 		);	
 
 		// Price Border Radius
 		$this->add_control(
-			'aee_price_border_radius',
+			'awea_price_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'aee' ),
+				'label' => esc_html__( 'Border Radius', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -266,9 +266,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Padding
 		$this->add_control(
-			'aee_price_padding',
+			'awea_price_padding',
 			[
-				'label' => esc_html__( 'Padding', 'aee' ),
+				'label' => esc_html__( 'Padding', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -281,18 +281,18 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Title Style
 		$this->start_controls_section(
-			'aee_price_title_style',
+			'awea_price_title_style',
 			[
-				'label' => esc_html__( 'Title', 'aee' ),
+				'label' => esc_html__( 'Title', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		// Price Title Color
 		$this->add_control(
-			'aee_price_title_color',
+			'awea_price_title_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
@@ -307,7 +307,7 @@ class Awesome_Price extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_price_title_typography',
+				'name' => 'awea_price_title_typography',
 				'selector' => '{{WRAPPER}} .price h2',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
@@ -319,18 +319,18 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Amount Style
 		$this->start_controls_section(
-			'aee_price_amount_style',
+			'awea_price_amount_style',
 			[
-				'label' => esc_html__( 'Amount', 'aee' ),
+				'label' => esc_html__( 'Amount', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		// Price Amount Background
 		$this->add_control(
-			'aee_price_amount_bg',
+			'awea_price_amount_bg',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .price h2' => 'background-color: {{VALUE}}',
@@ -343,9 +343,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Amount Title
 		$this->add_control(
-			'aee_price_amount_price',
+			'awea_price_amount_price',
 			[
-				'label' => esc_html__( 'Price', 'textdomain' ),
+				'label' => esc_html__( 'Price', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -353,9 +353,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Amount Color
 		$this->add_control(
-			'aee_price_amount_color',
+			'awea_price_amount_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
@@ -370,7 +370,7 @@ class Awesome_Price extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_price_amount_typography',
+				'name' => 'awea_price_amount_typography',
 				'selector' => '{{WRAPPER}} .price h2',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
@@ -380,9 +380,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Amount Suffix
 		$this->add_control(
-			'aee_price_amount_suffix',
+			'awea_price_amount_suffix',
 			[
-				'label' => esc_html__( 'Suffix', 'textdomain' ),
+				'label' => esc_html__( 'Suffix', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -390,9 +390,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Amount Color
 		$this->add_control(
-			'aee_price_amount_suffix_color',
+			'awea_price_amount_suffix_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
@@ -407,7 +407,7 @@ class Awesome_Price extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_price_amount_suffix_typography',
+				'name' => 'awea_price_amount_suffix_typography',
 				'selector' => '{{WRAPPER}} .price h2',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
@@ -419,18 +419,18 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Features Style
 		$this->start_controls_section(
-			'aee_price_features_style',
+			'awea_price_features_style',
 			[
-				'label' => esc_html__( 'Features', 'aee' ),
+				'label' => esc_html__( 'Features', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		// Price Feature Color
 		$this->add_control(
-			'aee_price_feature_color',
+			'awea_price_feature_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .price h2' => 'color: {{VALUE}}',
@@ -445,7 +445,7 @@ class Awesome_Price extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_price_feature_typography',
+				'name' => 'awea_price_feature_typography',
 				'selector' => '{{WRAPPER}} .price h2',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
@@ -455,9 +455,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Feature Border Color
 		$this->add_control(
-			'aee_price_feature_border_color',
+			'awea_price_feature_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
+				'label' => esc_html__( 'Border Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border' => 'border-color: {{VALUE}}',
@@ -472,30 +472,30 @@ class Awesome_Price extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_price_btn_style',
+			'awea_price_btn_style',
 			[
-				'label' => esc_html__( 'Button', 'aee' ),
+				'label' => esc_html__( 'Button', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);	
 
 		$this->start_controls_tabs(
-			'aee_price_btn_style_tabs'
+			'awea_price_btn_style_tabs'
 		);
 
 		// Price Button Normal Tab
 		$this->start_controls_tab(
-			'aee_button_normal_tab',
+			'awea_button_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'aee' ),
+				'label' => esc_html__( 'Normal', 'awesome-widgets' ),
 			]
 		);
 
 		// Price Button Color
 		$this->add_control(
-			'aee_price_btn_color',
+			'awea_price_btn_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'label' => esc_html__( 'Icon Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border i' => 'color: {{VALUE}}',
@@ -508,9 +508,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Button Border Color
 		$this->add_control(
-			'aee_price_btn_border_color',
+			'awea_price_btn_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
+				'label' => esc_html__( 'Border Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border' => 'border-color: {{VALUE}}',
@@ -525,17 +525,17 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Button Hover Tab
 		$this->start_controls_tab(
-			'aee_price_button_hover_tab',
+			'awea_price_button_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'aee' ),
+				'label' => esc_html__( 'Hover', 'awesome-widgets' ),
 			]
 		);
 
 		// Price Button Hover Icon Color
 		$this->add_control(
-			'aee_price_btn_bg_hover_color',
+			'awea_price_btn_bg_hover_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'label' => esc_html__( 'Icon Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border:hover i' => 'color: {{VALUE}}',
@@ -548,9 +548,9 @@ class Awesome_Price extends Widget_Base {
 
 		// Price Button Hover Background Color
 		$this->add_control(
-			'aee_price_btn_bg_hover_bg',
+			'awea_price_btn_bg_hover_bg',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border:hover:after' => 'background-color: {{VALUE}}',
@@ -582,32 +582,32 @@ class Awesome_Price extends Widget_Base {
 	protected function render() {
 		// get our input from the widget settings.
 		$settings = $this->get_settings_for_display();
-		$aee_price_box_title = $settings['aee_price_box_title'];
-		$aee_price_box_amount = $settings['aee_price_box_amount'];
-		$aee_price_box_plan = $settings['aee_price_box_plan'];
-		$aee_price_box_button_text = $settings['aee_price_box_button_text'];
-		$aee_price_box_button_link = $settings['aee_price_box_button_link'];
+		$awea_price_box_title = $settings['awea_price_box_title'];
+		$awea_price_box_amount = $settings['awea_price_box_amount'];
+		$awea_price_box_plan = $settings['awea_price_box_plan'];
+		$awea_price_box_button_text = $settings['awea_price_box_button_text'];
+		$awea_price_box_button_link = $settings['awea_price_box_button_link'];
        ?>
 			<div class="single-price">
 				  <div class="price-title">
-					<h4><?php echo $aee_price_box_title;?></h4>
+					<h4><?php echo esc_html($awea_price_box_title);?></h4>
 				  </div>
 				  <div class="price-tag">
-					<h2><?php echo $aee_price_box_amount;?> <span><?php echo $aee_price_box_plan;?></span></h2>
+					<h2><?php echo esc_html($awea_price_box_amount);?> <span><?php echo esc_html($awea_price_box_plan);?></span></h2>
 				  </div>
 				  <div class="price-item">
 					<ul>
 						<?php 
-							foreach (  $settings['aee_price_box_features_list'] as $item ) { 
-								$aee_price_box_features = $item['aee_price_box_features'];
+							foreach (  $settings['awea_price_box_features_list'] as $item ) { 
+								$awea_price_box_features = $item['awea_price_box_features'];
 							?>
-							<li class="price-area__item"><?php echo $aee_price_box_features;?></li>
+							<li class="price-area__item"><?php echo esc_html($awea_price_box_features);?></li>
 						<?php 
 							} 
 						?>
 					</ul>
 				  </div>
-				  <a href="<?php echo $aee_price_box_button_link;?>" class="box-btn"><?php echo $aee_price_box_button_text;?></a>
+				  <a href="<?php echo esc_url($awea_price_box_button_link);?>" class="box-btn"><?php echo esc_html($awea_price_box_button_text);?></a>
 			</div>
        <?php
 	}

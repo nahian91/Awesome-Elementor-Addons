@@ -34,7 +34,7 @@ class Awesome_CTA extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'CTA', 'aee' );
+		return esc_html__( 'CTA', 'awesome-widgets' );
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Awesome_CTA extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'aee-elementor' ];
+		return [ 'awesome-widgets-elementor' ];
 	}
 
 	/**
@@ -75,9 +75,9 @@ class Awesome_CTA extends Widget_Base {
 		
 		// start of the Content tab section
 	   $this->start_controls_section(
-	       'aee_cta_contents',
+	       'awea_cta_contents',
 		    [
-		        'label' => esc_html__('Contents', 'aee'),
+		        'label' => esc_html__('Contents', 'awesome-widgets'),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 		   
 		    ]
@@ -85,9 +85,9 @@ class Awesome_CTA extends Widget_Base {
 		
 		// CTA Sub Title
 		$this->add_control(
-			'aee_cta_sub_title',
+			'awea_cta_sub_title',
 			[
-				'label' => esc_html__( 'Sub Title', 'aee' ),
+				'label' => esc_html__( 'Sub Title', 'awesome-widgets' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'default' => esc_html__( 'are you ready?' ),
@@ -96,45 +96,45 @@ class Awesome_CTA extends Widget_Base {
 
 		// CTA Title
 		$this->add_control(
-			'aee_cta_title',
+			'awea_cta_title',
 			[
-				'label' => esc_html__( 'Title', 'aee' ),
+				'label' => esc_html__( 'Title', 'awesome-widgets' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'We Are Awesome CTA!' ),
+				'default' => esc_html__( 'We Are Awesome CTA!', 'awesome-widgets' ),
 			]
 		);
 
 		// CTA Description
 		$this->add_control(
-			'aee_cta_desc',
+			'awea_cta_desc',
 			[
-				'label' => esc_html__( 'Description', 'aee' ),
+				'label' => esc_html__( 'Description', 'awesome-widgets' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'label_block' => true,
-				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters', 'aee' ),
+				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters', 'awesome-widgets' ),
 			]
 		);
 
 		// CTA Button 1
 		$this->add_control(
-			'aee_cta_button1',
+			'awea_cta_button1',
 			[
-				'label' => esc_html__( 'Button 1', 'aee' ),
+				'label' => esc_html__( 'Button 1', 'awesome-widgets' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( '+880 123 4567 890' ),
+				'default' => esc_html__( '+880 123 4567 890', 'awesome-widgets' ),
 			]
 		);
 
 		// CTA Button 2
 		$this->add_control(
-			'aee_cta_button2',
+			'awea_cta_button2',
 			[
-				'label' => esc_html__( 'Button 2', 'aee' ),
+				'label' => esc_html__( 'Button 2', 'awesome-widgets' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'info@anahian.com' ),
+				'default' => esc_html__( 'info@anahian.com', 'awesome-widgets' ),
 			]
 		);
 		
@@ -142,18 +142,18 @@ class Awesome_CTA extends Widget_Base {
 		
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_cta_layout_style',
+			'awea_cta_layout_style',
 			[
-				'label' => esc_html__( 'Layouts', 'aee' ),
+				'label' => esc_html__( 'Layouts', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		// CTA Background Color
 		$this->add_control(
-			'aee_cta_background_color',
+			'awea_cta_background_color',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .single-price' => 'background-color: {{VALUE}}',
@@ -168,16 +168,16 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name' => 'aee_cta_border',
+				'name' => 'awea_cta_border',
 				'selector' => '{{WRAPPER}} .single-price',
 			]
 		);	
 
 		// CTA Border Radius
 		$this->add_control(
-			'aee_cta_border_radius',
+			'awea_cta_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'aee' ),
+				'label' => esc_html__( 'Border Radius', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -188,9 +188,9 @@ class Awesome_CTA extends Widget_Base {
 
 		// CTA Padding
 		$this->add_control(
-			'aee_cta_padding',
+			'awea_cta_padding',
 			[
-				'label' => esc_html__( 'Padding', 'aee' ),
+				'label' => esc_html__( 'Padding', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -204,17 +204,17 @@ class Awesome_CTA extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_cta_contents_style',
+			'awea_cta_contents_style',
 			[
-				'label' => esc_html__( 'Contents', 'aee' ),
+				'label' => esc_html__( 'Contents', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
-			'aee_cta_contents_subtitle_options',
+			'awea_cta_contents_subtitle_options',
 			[
-				'label' => esc_html__( 'Sub Title', 'textdomain' ),
+				'label' => esc_html__( 'Sub Title', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -224,7 +224,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_subtitle_color',
 			[
-				'label' => esc_html__( 'Text Color', 'aee' ),
+				'label' => esc_html__( 'Text Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -248,9 +248,9 @@ class Awesome_CTA extends Widget_Base {
 		);
 
 		$this->add_control(
-			'aee_cta_contents_title_options',
+			'awea_cta_contents_title_options',
 			[
-				'label' => esc_html__( 'Title', 'textdomain' ),
+				'label' => esc_html__( 'Title', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -260,7 +260,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_subtitle_color',
 			[
-				'label' => esc_html__( 'Text Color', 'aee' ),
+				'label' => esc_html__( 'Text Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -290,7 +290,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_section(
 			'wb_affiliate_title_section',
 			[
-				'label' => esc_html__( 'Heading', 'aee' ),
+				'label' => esc_html__( 'Heading', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -299,7 +299,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_title_color',
 			[
-				'label' => esc_html__( 'Text Color', 'aee' ),
+				'label' => esc_html__( 'Text Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -329,7 +329,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_section(
 			'wb_affiliate_btn_section',
 			[
-				'label' => esc_html__( 'Button', 'aee' ),
+				'label' => esc_html__( 'Button', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -342,7 +342,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_tab(
 			'wb_affiliate_btn_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'aee' ),
+				'label' => esc_html__( 'Normal', 'awesome-widgets' ),
 			]
 		);
 
@@ -350,7 +350,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_color',
 			[
-				'label' => esc_html__( 'Text Color', 'aee' ),
+				'label' => esc_html__( 'Text Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .btn-border' => 'color: {{VALUE}}',
@@ -365,7 +365,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_border',
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
+				'label' => esc_html__( 'Border Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .btn-border' => 'border-color: {{VALUE}}',
@@ -394,7 +394,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_tab(
 			'wb_affiliate_btn_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'aee' ),
+				'label' => esc_html__( 'Hover', 'awesome-widgets' ),
 			]
 		);
 
@@ -402,7 +402,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_hover_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .btn-border:hover' => 'color: {{VALUE}}',
@@ -417,7 +417,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_hover_bg',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .btn-border:hover:before' => 'background-color: {{VALUE}}',
@@ -432,7 +432,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_hover_border',
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
+				'label' => esc_html__( 'Border Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .btn-border:hover' => 'border-color: {{VALUE}}',
@@ -454,7 +454,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_section(
 			'wb_products_section',
 			[
-				'label' => esc_html__( 'Product', 'aee' ),
+				'label' => esc_html__( 'Product', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -463,7 +463,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_image_options',
 			[
-				'label' => esc_html__( 'Image', 'aee' ),
+				'label' => esc_html__( 'Image', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -482,7 +482,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_cta_border_style',
 			[
-				'label' => esc_html__( 'Border Radiuse', 'aee' ),
+				'label' => esc_html__( 'Border Radiuse', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%'],
 				'selectors' => [
@@ -495,7 +495,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_link_options',
 			[
-				'label' => esc_html__( 'Product Link', 'aee' ),
+				'label' => esc_html__( 'Product Link', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -509,7 +509,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_tab(
 			'wb_affiliate_btn_icon_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'aee' ),
+				'label' => esc_html__( 'Normal', 'awesome-widgets' ),
 			]
 		);
 
@@ -517,7 +517,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_icon_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'label' => esc_html__( 'Icon Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border i' => 'color: {{VALUE}}',
@@ -532,7 +532,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_icon_border',
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
+				'label' => esc_html__( 'Border Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border' => 'border-color: {{VALUE}}',
@@ -549,7 +549,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->start_controls_tab(
 			'wb_affiliate_btn_icon_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'aee' ),
+				'label' => esc_html__( 'Hover', 'awesome-widgets' ),
 			]
 		);
 
@@ -557,7 +557,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_icon_hover_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'aee' ),
+				'label' => esc_html__( 'Icon Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border:hover i' => 'color: {{VALUE}}',
@@ -572,7 +572,7 @@ class Awesome_CTA extends Widget_Base {
 		$this->add_control(
 			'wb_affiliate_btn_icon_hover_bg',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .icon-border:hover:after' => 'background-color: {{VALUE}}',
@@ -599,22 +599,22 @@ class Awesome_CTA extends Widget_Base {
 	 *
 	 * @since 1.0.0
 	 * @access protected
-	 */
+	 */ 
 	protected function render() {
 		// get our input from the widget settings.
 		$settings = $this->get_settings_for_display();
-		$aee_cta_sub_title = $settings['aee_cta_sub_title'];
-		$aee_cta_title = $settings['aee_cta_title'];
-		$aee_cta_desc = $settings['aee_cta_desc'];
-		$aee_cta_button1 = $settings['aee_cta_button1'];
-		$aee_cta_button2 = $settings['aee_cta_button2'];
+		$awea_cta_sub_title = $settings['awea_cta_sub_title'];
+		$awea_cta_title = $settings['awea_cta_title'];
+		$awea_cta_desc = $settings['awea_cta_desc'];
+		$awea_cta_button1 = $settings['awea_cta_button1'];
+		$awea_cta_button2 = $settings['awea_cta_button2'];
        ?>
 			<div class="cta-box">
-				<span><?php echo $aee_cta_sub_title;?></span>
-				<h4><?php echo $aee_cta_title;?></h4>
-				<p><?php echo $aee_cta_desc;?></p>
-				<span class="cta-button"><?php echo $aee_cta_button1;?></span>
-				<span class="cta-button"><?php echo $aee_cta_button2;?></span>
+				<span><?php echo esc_html($awea_cta_sub_title);?></span>
+				<h4><?php echo esc_html($awea_cta_title);?></h4>
+				<p><?php echo esc_html($awea_cta_desc);?></p>
+				<span class="cta-button"><?php echo esc_html($awea_cta_button1);?></span>
+				<span class="cta-button"><?php echo esc_html($awea_cta_button2);?></span>
 			</div>
        <?php
 	}

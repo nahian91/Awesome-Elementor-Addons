@@ -34,7 +34,7 @@ class Awesome_Process extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Process', 'aee' );
+		return esc_html__( 'Process', 'awesome-widgets' );
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Awesome_Process extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'aee-elementor' ];
+		return [ 'awesome-widgets-elementor' ];
 	}
 
 	/**
@@ -75,9 +75,9 @@ class Awesome_Process extends Widget_Base {
 		
 		// start of the Content tab section
 	   $this->start_controls_section(
-	       'aee_process_contents',
+	       'awea_process_contents',
 		    [
-		        'label' => esc_html__('Content', 'aee'),
+		        'label' => esc_html__('Content', 'awesome-widgets'),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 		   
 		    ]
@@ -85,9 +85,9 @@ class Awesome_Process extends Widget_Base {
 		
 		// Process Title
 		$this->add_control(
-			'aee_process_title',
+			'awea_process_title',
 			[
-				'label' => esc_html__( 'Title', 'aee' ),
+				'label' => esc_html__( 'Title', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'default' => esc_html__( 'First Step' ),
@@ -96,9 +96,9 @@ class Awesome_Process extends Widget_Base {
 
 		// Process Number
 		$this->add_control(
-			'aee_process_number',
+			'awea_process_number',
 			[
-				'label' => esc_html__( 'Number', 'aee' ),
+				'label' => esc_html__( 'Number', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'default' => esc_html__( '1' ),
@@ -107,33 +107,33 @@ class Awesome_Process extends Widget_Base {
 
 		// Process Description
 		$this->add_control(
-			'aee_process_des',
+			'awea_process_des',
 			[
-				'label' => esc_html__( 'Description', 'aee' ),
+				'label' => esc_html__( 'Description', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'label_block' => true,
-				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content', 'aee' ),
+				'default' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content', 'awesome-widgets' ),
 			]
 		);
 
 		// Process Alignment
 		$this->add_control(
-			'aee_process_alignment',
+			'awea_process_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'aee' ),
+				'label' => esc_html__( 'Alignment', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'separator' => 'before',
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'aee' ),
+						'title' => esc_html__( 'Left', 'awesome-widgets' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'aee' ),
+						'title' => esc_html__( 'Center', 'awesome-widgets' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'aee' ),
+						'title' => esc_html__( 'Right', 'awesome-widgets' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -150,18 +150,18 @@ class Awesome_Process extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_process_title_options',
+			'awea_process_title_options',
 			[
-				'label' => esc_html__( 'Title', 'aee' ),
+				'label' => esc_html__( 'Title', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		// Process Background Color
 		$this->add_control(
-			'aee_process_title_background_color',
+			'awea_process_title_background_color',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .single-process h6' => 'background-color: {{VALUE}}',
@@ -176,16 +176,16 @@ class Awesome_Process extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name' => 'aee_process_title_border',
+				'name' => 'awea_process_title_border',
 				'selector' => '{{WRAPPER}} .single-process h6',
 			]
 		);	
 
 		// Process Border Radius
 		$this->add_control(
-			'aee_process_border_radius',
+			'awea_process_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'aee' ),
+				'label' => esc_html__( 'Border Radius', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -196,9 +196,9 @@ class Awesome_Process extends Widget_Base {
 
 		// Process Padding
 		$this->add_control(
-			'aee_process_padding',
+			'awea_process_padding',
 			[
-				'label' => esc_html__( 'Padding', 'aee' ),
+				'label' => esc_html__( 'Padding', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -209,9 +209,9 @@ class Awesome_Process extends Widget_Base {
 
 		// Process Title Color
 		$this->add_control(
-			'aee_process_title_color',
+			'awea_process_title_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .single-process h6' => 'color: {{VALUE}}',
@@ -226,7 +226,7 @@ class Awesome_Process extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_process_title_typography',
+				'name' => 'awea_process_title_typography',
 				'selector' => '{{WRAPPER}} .single-process h6',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
@@ -239,18 +239,18 @@ class Awesome_Process extends Widget_Base {
 		
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_process_number_options',
+			'awea_process_number_options',
 			[
-				'label' => esc_html__( 'Number', 'aee' ),
+				'label' => esc_html__( 'Number', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 		
 		// Process Number Color
 		$this->add_control(
-			'aee_process_number_color',
+			'awea_process_number_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Core\Schemes\Color::get_type(),
@@ -269,7 +269,7 @@ class Awesome_Process extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_process_number_typography',
+				'name' => 'awea_process_number_typography',
 				'selector' => '{{WRAPPER}} .single-process h6 span',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
@@ -279,9 +279,9 @@ class Awesome_Process extends Widget_Base {
 
 		// Process Number Background
 		$this->add_control(
-			'aee_process_number_bg',
+			'awea_process_number_bg',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Core\Schemes\Color::get_type(),
@@ -301,18 +301,18 @@ class Awesome_Process extends Widget_Base {
 
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_process_desc_options',
+			'awea_process_desc_options',
 			[
-				'label' => esc_html__( 'Description', 'aee' ),
+				'label' => esc_html__( 'Description', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 		
 		// Process Description Color
 		$this->add_control(
-			'aee_process_desc_color',
+			'awea_process_desc_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Core\Schemes\Color::get_type(),
@@ -331,7 +331,7 @@ class Awesome_Process extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_process_desc_typography',
+				'name' => 'awea_process_desc_typography',
 				'selector' => '{{WRAPPER}} .single-process p',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
@@ -355,13 +355,13 @@ class Awesome_Process extends Widget_Base {
 	protected function render() {
 		// get our input from the widget settings.
 		$settings = $this->get_settings_for_display();
-		$aee_process_title = $settings['aee_process_title'];
-		$aee_process_number = $settings['aee_process_number'];
-		$aee_process_des = $settings['aee_process_des'];
+		$awea_process_title = $settings['awea_process_title'];
+		$awea_process_number = $settings['awea_process_number'];
+		$awea_process_des = $settings['awea_process_des'];
        ?>
 			<div class="single-process">
-				<h6><?php echo $aee_process_title;?> <span><?php echo $aee_process_number;?></span></h6>
-				<p><?php echo $aee_process_des;?></p>
+				<h6><?php echo esc_html($awea_process_title);?> <span><?php echo esc_html($awea_process_number);?></span></h6>
+				<p><?php echo esc_html($awea_process_des);?></p>
 			</div>
        <?php
 	}

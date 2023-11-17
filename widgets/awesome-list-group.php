@@ -34,7 +34,7 @@ class Awesome_List_Group extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'List Group', 'aee' );
+		return esc_html__( 'List Group', 'awesome-widgets' );
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Awesome_List_Group extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'aee-elementor' ];
+		return [ 'awesome-widgets-elementor' ];
 	}
 
 	/**
@@ -75,9 +75,9 @@ class Awesome_List_Group extends Widget_Base {
 		
 		// start of the Content tab section
 	   $this->start_controls_section(
-	       'aee_list_group_contents',
+	       'awea_list_group_contents',
 		    [
-		        'label' => esc_html__('Contents', 'aee'),
+		        'label' => esc_html__('Contents', 'awesome-widgets'),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,		   
 		    ]
 	    );
@@ -87,20 +87,20 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Title 
 		$repeater->add_control(
-			'aee_list_group_title',
+			'awea_list_group_title',
 			[
-				'label' => esc_html__( 'List Title', 'aee' ),
+				'label' => esc_html__( 'List Title', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__('List Item', 'aee')
+				'default' => esc_html__('List Item', 'awesome-widgets')
 			]
 		);
 
 		// List Group Icon
 		$repeater->add_control(
-        	'aee_list_group_icon',
+        	'awea_list_group_icon',
 			[
-				'label'         => esc_html__('List Icon', 'aee'),
+				'label'         => esc_html__('List Icon', 'awesome-widgets'),
 				'type'          => \Elementor\Controls_Manager::ICON,
 				'label_block'   => true,
 				'default' => 'fa fa-star',
@@ -109,23 +109,23 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group List
 		$this->add_control(
-			'aee_list_group',
+			'awea_list_group',
 			[
-				'label' => esc_html__( 'List Group List', 'aee' ),
+				'label' => esc_html__( 'List Group List', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'aee_list_group_title' => __( 'List Item 1', 'aee' )
+						'awea_list_group_title' => __( 'List Item 1', 'awesome-widgets' )
 					],
 					[
-						'aee_list_group_title' => __( 'List Item 2', 'aee' )
+						'awea_list_group_title' => __( 'List Item 2', 'awesome-widgets' )
 					],
 					[
-						'aee_list_group_title' => __( 'List Item 3', 'aee' )
+						'awea_list_group_title' => __( 'List Item 3', 'awesome-widgets' )
 					],
 				],
-				'title_field' => '{{{ aee_list_group_title }}}',
+				'title_field' => '{{{ awea_list_group_title }}}',
 			]
 		);		
 		
@@ -134,9 +134,9 @@ class Awesome_List_Group extends Widget_Base {
 		
 		// start of the Style tab section
 		$this->start_controls_section(
-			'aee_list_group_style',
+			'awea_list_group_style',
 			[
-				'label' => esc_html__( 'Contents', 'aee' ),
+				'label' => esc_html__( 'Contents', 'awesome-widgets' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);	
@@ -145,7 +145,7 @@ class Awesome_List_Group extends Widget_Base {
 		$this->add_control(
 			'wb_brand_sep_options',
 			[
-				'label' => esc_html__( 'Layouts', 'aee' ),
+				'label' => esc_html__( 'Layouts', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -153,9 +153,9 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Background Color
 		$this->add_control(
-			'aee_list_group_background_color',
+			'awea_list_group_background_color',
 			[
-				'label' => esc_html__( 'Background', 'aee' ),
+				'label' => esc_html__( 'Background', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .list-item' => 'background-color: {{VALUE}}',
@@ -170,16 +170,16 @@ class Awesome_List_Group extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name' => 'aee_list_group_border',
+				'name' => 'awea_list_group_border',
 				'selector' => '{{WRAPPER}} .list-item',
 			]
 		);	
 
 		// List Group Border Radius
 		$this->add_control(
-			'aee_list_group_border_radius',
+			'awea_list_group_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'aee' ),
+				'label' => esc_html__( 'Border Radius', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -190,9 +190,9 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Padding
 		$this->add_control(
-			'aee_list_group_padding',
+			'awea_list_group_padding',
 			[
-				'label' => esc_html__( 'Padding', 'aee' ),
+				'label' => esc_html__( 'Padding', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem'],
 				'selectors' => [
@@ -203,9 +203,9 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Icon Options
 		$this->add_control(
-			'aee_list_group_icon_options',
+			'awea_list_group_icon_options',
 			[
-				'label' => esc_html__( 'Icon', 'aee' ),
+				'label' => esc_html__( 'Icon', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -213,9 +213,9 @@ class Awesome_List_Group extends Widget_Base {
 		
 		// List Group Icon Color
 		$this->add_control(
-			'aee_list_group_icon_color',
+			'awea_list_group_icon_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -228,9 +228,9 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Icon Border Color
 		$this->add_control(
-			'aee_list_group_icon_border_color',
+			'awea_list_group_icon_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'aee' ),
+				'label' => esc_html__( 'Border Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
@@ -243,9 +243,9 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Title Options
 		$this->add_control(
-			'aee_list_group_title_options',
+			'awea_list_group_title_options',
 			[
-				'label' => esc_html__( 'Heading', 'aee' ),
+				'label' => esc_html__( 'Heading', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -253,9 +253,9 @@ class Awesome_List_Group extends Widget_Base {
 
 		// List Group Title Color
 		$this->add_control(
-			'aee_list_group_title_color',
+			'awea_list_group_title_color',
 			[
-				'label' => esc_html__( 'Color', 'aee' ),
+				'label' => esc_html__( 'Color', 'awesome-widgets' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -270,7 +270,7 @@ class Awesome_List_Group extends Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aee_list_group_title_typography',
+				'name' => 'awea_list_group_title_typography',
 				'selector' => '{{WRAPPER}} .list-item h4',
 				'global' => [
 					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_PRIMARY,
@@ -295,15 +295,15 @@ class Awesome_List_Group extends Widget_Base {
 		// get our input from the widget settings.
 		$settings = $this->get_settings_for_display();
 
-		if ( $settings['aee_list_group'] ) {  ?>			
+		if ( $settings['awea_list_group'] ) {  ?>			
 			<?php 
-			foreach (  $settings['aee_list_group'] as $item ) { 
-				$aee_group_list_title = $item['aee_list_group_title'];
-				$aee_group_list_icon =  $item['aee_list_group_icon'];
+			foreach (  $settings['awea_list_group'] as $item ) { 
+				$awea_group_list_title = $item['awea_list_group_title'];
+				$awea_group_list_icon =  $item['awea_list_group_icon'];
 			?>
 				<div class="list-group">
 					<div class="list-item">
-						<i class="<?php echo esc_attr($aee_group_list_icon);?>"></i> <h4><?php echo $aee_group_list_title;?></h4>
+						<i class="<?php echo esc_attr($awea_group_list_icon);?>"></i> <h4><?php echo esc_html($awea_group_list_title);?></h4>
 					</div>
 				</div>
 			<?php } ?>
